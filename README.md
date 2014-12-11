@@ -4,7 +4,7 @@
     <ul style="list-style-type: none">
         <li>Author: Dave Zimmelman</li>
         <li>License: MIT</li>
-        <li>Requries: angularjs; requirejs;</li>
+        <li>Dependencies: angularjs; requirejs;</li>
     </ul>
 </h2>
 <p><em>0.0.0</em></p>
@@ -12,57 +12,55 @@
 <p>No other information at this time.</p>
 <hr>
 <p>
-    Current project file structure:
+    Current project-distribution tree:
     <ul>
         <li>
             script/
             <ul>
                 <li>ng-moduleinject.js</li>
-                <li>
+                <!--li>
                     ng-moduleinject/
                     <ul>
                     </ul>
-                </li>
+                </li-->
             </ul>
         </li>
     </ul>
 </p>
 <p>
-    Current development environment file structure:
+    Current development environment tree:
     <ul>
-        <li>index.html</li>
-        <li>test.html</li>
-        <li>README.md</li>
         <li>
             script/
             <ul>
-                <li>ng-moduleinject.js</li>
-                <li>testmain.js</li>
                 <li>
                     lib/
                     <ul>
                         <li>jquery-2.1.1.js</li>
                         <li>qunit-1.16.0.js</li>
-                        <li>require-2.1.15-commented</li>
+                        <li>require-2.1.15-commented.js</li>
                     </ul>
                 </li>
-                <li>
+                <!--li>
                     ng-moduleinject/
                     <ul>
                     </ul>
-                </li>
+                </li-->
                 <li>
                     tests/
                     <ul>
                         <li>
                             ng-moduleinject/
                             <ul>
-                                <li>package.json</li>
+                                <li>main.js</li>
                             </ul>
                         </li>
-                        <li>packages.json</li>
+                        <li>main.js</li>
+                        <li>testsuite.js</li>
                     </ul>
                 </li>
+                <li>ng-moduleinject.js</li>
+                <li>testmain.js</li>
             </ul>
         </li>
         <li>
@@ -71,5 +69,8 @@
                 <li>qunit-1.16.0.css</li>
             </ul>
         </li>
+        <li>index.html</li>
+        <li>README.md</li>
+        <li>test.html</li>
     </ul>
 </p>
