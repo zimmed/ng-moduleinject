@@ -1,4 +1,4 @@
-<h1>ng.moduleinject</h1>
+<h1>ng-moduleinject</h1>
 <h2>Plugin for angular to handle simple module injection at runtime.</h2>
 <h4>
     <ul style="list-style-type: none">
@@ -17,9 +17,9 @@
         <li>
             script/
             <ul>
-                <li>ng.moduleinject.js</li>
+                <li>ng-moduleinject.js</li>
                 <li>
-                    ng.moduleinject/
+                    ng-moduleinject/
                     <ul>
                     </ul>
                 </li>
@@ -28,7 +28,7 @@
     </ul>
 </p>
 <p>
-    Current environment file structure:
+    Current development environment file structure:
     <ul>
         <li>index.html</li>
         <li>test.html</li>
@@ -36,17 +36,18 @@
         <li>
             script/
             <ul>
-                <li>ng.moduleinject.js</li>
+                <li>ng-moduleinject.js</li>
                 <li>testmain.js</li>
                 <li>
                     lib/
                     <ul>
+                        <li>jquery-2.1.1.js</li>
                         <li>qunit-1.16.0.js</li>
                         <li>require-2.1.15-commented</li>
                     </ul>
                 </li>
                 <li>
-                    ng.moduleinject/
+                    ng-moduleinject/
                     <ul>
                     </ul>
                 </li>
@@ -54,12 +55,12 @@
                     tests/
                     <ul>
                         <li>
-                            ng.moduleinject/
+                            ng-moduleinject/
                             <ul>
                                 <li>package.json</li>
                             </ul>
                         </li>
-                        <li>package.json</li>
+                        <li>packages.json</li>
                     </ul>
                 </li>
             </ul>
