@@ -1,9 +1,13 @@
+/**
+ * Top level test library
+ */
+
 (function (window, require) {
     "use strict";
     
     require.config({
         paths: {
-            'QUnit': 'libs/qunit'
+            'QUnit': 'lib/qunit-1.16.0'
         },
         shim: {
            'QUnit': {
@@ -18,14 +22,29 @@
 
     // require the unit tests.
     require(
-        ['QUnit', 'tests/dummyTest', 'tests/dummyTest2'],
-        function(QUnit, dummyTest, dummyTest2) {
-            // run the tests.
-            dummyTest.run();
-            dummyTest2.run();
-            // start QUnit.
-            QUnit.load();
-            QUnit.start();
+        ['QUnit', 'tests/testsuite' 'tests/main'],
+        function(QUnit, TestSuite, tests) {
+            
+            // Create new TestSuite
+            var testSuite = new TestSuite();
+            // Expose child TestSuites
+            testSuite._tests = tests;
+            // Define run method
+            testSuite.run = function () {
+                this._tests.run();
+            };
+            // Define init function (special for top-level testmain.js)
+            testSuite.init = function () {
+                // Run QUnit
+                QUnit.load();
+                QUnit.start();
+            };
+            
+            // Unlike child-levels, this level will not return
+            //  the TestSuite. Instead, it is exposed to the
+            //  window as window.testSuite.
+            window.testSuite = testSuite;
         }
     );
+
 })(window, require);
