@@ -1,8 +1,12 @@
-<h1>ng.moduleinject - Angular module injection</h1>
+<h1>ng.moduleinject</h1>
 <h2>Plugin for angular to handle simple module injection at runtime.</h2>
-<h2>Author: Dave Zimmelman</h2>
-<h2>License: MIT</h2>
-<h2>Requries: angularjs; requirejs;</h2>
+<h4>
+    <ul style="list-style-type: none">
+        <li>Author: Dave Zimmelman</li>
+        <li>License: MIT</li>
+        <li>Requries: angularjs; requirejs;</li>
+    </ul>
+</h2>
 <p><em>0.0.0</em></p>
 <p>Currently in beginning stages of development. Development will be test-driven.</p>
 <p>No other information at this time.</p>
