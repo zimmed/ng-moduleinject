@@ -32,16 +32,17 @@
             var testSuite = new TestSuite();
             // Expose child TestSuites
             testSuite._tests = tests;
-            // Define run method
-            testSuite.run = function () {
-                this._tests.run();
-            };
             // Define init function (special for top-level testmain.js)
             testSuite.init = function () {
                 // Run QUnit
                 QUnit.start();
             };
-
+            // Define run method
+            testSuite.run = function () {
+                this._tests.run();
+                this.init();
+            };
+            
             // Unlike child-levels, this level will not return
             //  the TestSuite. Instead, it is exposed to the
             //  window as window.testSuite and trigger loaded
