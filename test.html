@@ -6,15 +6,34 @@
         
         <title>QUnit basic example</title>
         
-        <link rel="stylesheet" href="style/qunit-1.16.0.css">
+        <!-- QUnit 1.16.0 Style Sheet -->
+        <link rel="stylesheet" href="style/qunit-1.16.0.css" />
+        
+        <!-- jQuery 2.1.1 -->
+        <script src="script/lib/jquery-2.1.1.js"></script>
     </head>
     
     <body>
+        <!-- Reserved elements for QUnit -->
         <div id="qunit"></div>
-        
         <div id="qunit-fixture"></div>
+        <!-- End QUnit elements -->
         
-        <script data-main="script/testmain" src="script/lib/require.2.1.15.commented.js"></script>
+        <div style="display: none;" id="qunitLoaded"></div>
+        
+        
+        <!-- Unit Test Library | Exposes `TestSuite` to window -->
+        <script data-main="script/testmain"
+                src="script/lib/require-2.1.15-commented.js">
+        </script>
+        
+        
+        <script>
+            $('div#qunitLoaded').on('click', function (e) {
+                TestSuite.runAll();
+            });
+        </script>
+        
     </body>
     
 </html>

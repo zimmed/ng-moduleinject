@@ -1,12 +1,12 @@
 /**
- * `ng-moduleinject` TestSuite
+ * `dummy` TestSuite
  */
 
 (function (define) {
     "use strict";
-
+    
     define(
-        ['../testsuite'],
+        ['tests/testsuite'],
         function (TestSuite) {
             
             // Create new TestSuite
