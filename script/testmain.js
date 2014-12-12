@@ -26,8 +26,8 @@
 
     // require the unit tests.
     require(
-        ['jQuery', 'QUnit', 'tests/testsuite', 'tests/main'],
-        function ($, QUnit, TestSuite, tests) {
+        ['QUnit', 'tests/testsuite', 'tests/main'],
+        function (QUnit, TestSuite, tests) {
 
             // Create new TestSuite
             var testSuite = new TestSuite();

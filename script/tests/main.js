@@ -7,15 +7,14 @@
 
     define(
         ['tests/testsuite',
-         'tests/ng-moduleinject/main',
-         'tests/dummy/main'],
-        function (TestSuite, ng_moduleinject, dummy) {
+         'tests/ng-moduleinject/main'],
+        function (TestSuite, ng_moduleinject) {
             
             // Create new TestSuite
             var testSuite = new TestSuite();
             // Expose child TestSuites or Tests
             testSuite._ng_moduleinject = ng_moduleinject;
-            testSuite._dummy = dummy;
+            //testSuite._dummy = dummy;
             // Define run method
             testSuite.run = function () {
                 testSuite._ng_moduleinject.run();
