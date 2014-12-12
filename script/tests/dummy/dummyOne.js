@@ -6,8 +6,8 @@
     "use strict";
     
     define(
-        ['jQuery', 'tests/testmodule'],
-        function ($, TestModule) {
+        ['tests/testmodule'],
+        function (TestModule) {
             
             // Create new TestModue
             var dummyOne = new TestModule("tests.dummy.dummyOne");

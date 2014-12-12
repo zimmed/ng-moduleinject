@@ -7,8 +7,8 @@
     "use strict";
     
     define(
-        ['jQuery', 'QUnit'],
-        function ($, QUnit) {
+        ['QUnit'],
+        function (QUnit) {
             /**
              * TestModule - pseudo-class that contains basic functionality
              *  for test module.
