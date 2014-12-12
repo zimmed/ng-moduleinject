@@ -64,8 +64,8 @@
                         throw ("Invalid argument passed to `runTests`: " +
                             JSON.stringify(tests));
                     }
-                    for (i = 0; i < tests.length; i += 1) {
-                        this.runTest(tests[i], true);
+                    for (i in tests) {
+                        this.runTest(i, true);
                     }
                     if (this.init) {
                         this.init();

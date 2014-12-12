@@ -7,8 +7,8 @@
     "use strict";
     
     define(
-        ['QUnit'],
-        function (QUnit) {
+        ['jQuery', 'QUnit'],
+        function ($, QUnit) {
             /**
              * TestModule - pseudo-class that contains basic functionality
              *  for test module.
@@ -34,13 +34,8 @@
                         if (!dont_init) {
                             QUnit.module(this.name);
                         }
-                        if (this.setUp) {
-                            this.setUp();
-                        }
                         this.tests[test]();
-                        if (this.tearDown) {
-                            this.tearDown();
-                        }
+                        
                     }
                 };
                 
@@ -50,8 +45,8 @@
                 this.run = function () {
                     var i;
                     QUnit.module(this.name);
-                    for (i = 0; i < this.tests.length; i += 1) {
-                        this.runTest(this.tests[i], true);
+                    for (i in this.tests) {
+                        this.runTest(i, true);
                     }
                 };
                 
@@ -60,13 +55,25 @@
                 
                 /**
                  * Add test to module
+                 *  @param mod (TestModule) - Reference to current test module
                  *  @param name (str) - The name (identifier format) of the test
-                 *  @
+                 *  @param description (str) - Description of test
+                 *  @param callback (function (assert)) - Test procedure
                  */
-                this.addTest = function (name, description, callback) {
-                    var str = "[" + this.name + "." + name + "] " + description;
+                this.addTest = function (mod, name, description, callback) {
+                    var str = "[" + name + "] " + description;
                     this.tests[name] = function () {
-                        QUnit.test(str, callback);
+                        
+                        QUnit.test(str, function (assert) {
+                            if (mod.setUp) {
+                                mod.setUp();
+                            }
+                            callback(assert, mod);
+                            if (mod.tearDown) {
+                                mod.tearDown();
+                            }
+                        });
+                        
                     };
                 };
                 

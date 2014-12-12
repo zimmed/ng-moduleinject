@@ -6,17 +6,19 @@
     "use strict";
     
     define(
-        ['tests/testsuite'],
-        function (TestSuite) {
+        ['tests/testsuite',
+         'tests/dummy/dummyOne'],
+        function (TestSuite, dummyOne) {
             
             // Create new TestSuite
             var testSuite = new TestSuite();
             // Expose child TestSuites or Tests
-            
+            testSuite._dummyOne = dummyOne;
             // Define run method
             testSuite.run = function () {
-                // No tests yet
+                this._dummyOne.run();
             };
+            
             // Return TestSuite
             return testSuite;
         }
