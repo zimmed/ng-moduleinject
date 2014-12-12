@@ -14,6 +14,7 @@
             'QUnit': {
                 exports: 'QUnit',
                 init: function () {
+                    QUnit.config.autoload = false;
                     QUnit.config.autostart = false;
                 }
             },
@@ -35,6 +36,7 @@
             // Define init function (special for top-level testmain.js)
             testSuite.init = function () {
                 // Run QUnit
+                QUnit.load();
                 QUnit.start();
             };
             // Define run method
