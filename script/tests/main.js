@@ -14,11 +14,9 @@
             var testSuite = new TestSuite();
             // Expose child TestSuites or Tests
             testSuite._ng_moduleinject = ng_moduleinject;
-            //testSuite._dummy = dummy;
             // Define run method
             testSuite.run = function () {
                 testSuite._ng_moduleinject.run();
-                testSuite._dummy.run();
             };
             // Return TestSuite
             return testSuite;
