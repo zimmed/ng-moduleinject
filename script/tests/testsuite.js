@@ -14,14 +14,28 @@
              */
             var TestSuite = function () {
                 
+                /* Holds all child suites/modules */
+                this.children : {},
+                    
+                /**
+                 * Add children and return this for cascading operations
+                 *  @param name (str) - The name of the child module/suite
+                 *  @param child (mixed) - The TestSuite or TestModule to add
+                 *  @return this
+                 */
+                this.addChild : function (name, child) {
+                    this.children[name] = child;
+                    return this;
+                }
+                
                 /**
                  * Run all tests in current suite
-                 *
-                 * Note: This should be overridden for each instance
-                 *  of TestSuite.
                  */
                 this.run = function () {
-                    throw "run method never defined for TestSuite!";
+                    var child_name;
+                    for (child_name in this.children) {
+                        this.children[child_name].run();
+                    }
                 };
                 
                 /* Alias for this.run */
@@ -43,7 +57,7 @@
                                    JSON.stringify(test));
                         }
                         scope = test.split('.');
-                        this['_' + scope[0]].run(scope.slice(1));
+                        this.children[scope[0]].run(scope.slice(1));
                     }
                     if (!dont_init && this.init) {
                         this.init();

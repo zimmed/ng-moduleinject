@@ -199,6 +199,7 @@
                                 expr = false;
                                 break;
                             }
+                        }
                     } else {
                         expr = (testObject === null);
                     }

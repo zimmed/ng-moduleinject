@@ -13,11 +13,7 @@
             // Create new TestSuite
             var testSuite = new TestSuite();
             // Expose child TestSuites or Tests
-            testSuite._dummyOne = dummyOne;
-            // Define run method
-            testSuite.run = function () {
-                this._dummyOne.run();
-            };
+            testSuite.addChild('dummyOne', dummyOne);
             
             // Return TestSuite
             return testSuite;

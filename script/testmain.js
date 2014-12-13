@@ -27,7 +27,7 @@
     require(
         ['jQuery', 'QUnit', 'tests/assertions'],
         function ($, QUnit, assertions) {
-            var prop;
+            var prop, temp;
             /* Add custom assertion methods from tests/assertions.js */
             for (prop in assertions) {
                 QUnit.assert[prop] = assertions[prop];
@@ -36,7 +36,8 @@
             QUnit.assert._flags.not = true;
             QUnit.assert.is = QUnit.assert;
             QUnit.assert.does = QUnit.assert;
-            QUnit.assert.not = $.extend(true, {}, QUnit.assert);
+            temp = $.extend(false, {}, QUnit.assert);
+            QUnit.assert.not = temp;
             QUnit.assert.not._flags.not = true;
         }
     );
@@ -49,16 +50,17 @@
             // Create new TestSuite
             var testSuite = new TestSuite();
             // Expose child TestSuites
-            testSuite._tests = tests;
+            testSuite.addChild('tests', tests);
             // Define init function (special for top-level testmain.js)
             testSuite.init = function () {
                 // Run QUnit
                 QUnit.load();
                 QUnit.start();
             };
-            // Define run method
+            // Override run method to init after call
+            testSuite._old_run = testSuite.run;
             testSuite.run = function () {
-                this._tests.run();
+                testSuite._old_run();
                 this.init();
             };
             
