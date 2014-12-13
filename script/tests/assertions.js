@@ -188,19 +188,19 @@
                 },
                 
                 /* Verifies that object exists, but is empty */
-                empty : function (a, msg) {
+                empty : function (testObject, msg) {
                     var expr, prop;
-                    msg = this._parseMessage("{1} is empty.", msg, a);
-                    if (typeof a === "string" || typeof a === "array") {
-                        expr = (a.length === 0);
-                    } else if (typeof a === "object") {
-                        for (prop in a) {
-                            if (a.hasOwnProperty(prop)) {
+                    msg = this._parseMessage("{1} is empty.", msg, testObject);
+                    if (typeof testObject === "string" || typeof testObject === "array") {
+                        expr = (testObject.length === 0);
+                    } else if (typeof testObject === "object") {
+                        for (prop in testObject) {
+                            if (testObject.hasOwnProperty(prop)) {
                                 expr = false;
                                 break;
                             }
                     } else {
-                        expr = (a === null);
+                        expr = (testObject === null);
                     }
                     return this._test(expr, msg);
                 }
