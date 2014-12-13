@@ -17,7 +17,7 @@
                 
                 /* init module data */
                 this.name = name;
-                this.tests = [];
+                this.tests = {};
                 
                 /**
                  * Run only specified test

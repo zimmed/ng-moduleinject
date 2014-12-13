@@ -15,7 +15,7 @@
             var TestSuite = function () {
                 
                 /* Holds all child suites/modules */
-                this.children : {},
+                this.children = {};
                     
                 /**
                  * Add children and return this for cascading operations
@@ -23,10 +23,10 @@
                  *  @param child (mixed) - The TestSuite or TestModule to add
                  *  @return this
                  */
-                this.addChild : function (name, child) {
+                this.addChild = function (name, child) {
                     this.children[name] = child;
                     return this;
-                }
+                };
                 
                 /**
                  * Run all tests in current suite
