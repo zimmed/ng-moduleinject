@@ -30,13 +30,14 @@
             var prop;
             /* Add custom assertion methods from tests/assertions.js */
             for (prop in assertions) {
-                QUnit.Assert[prop] = assertions[prop];
+                QUnit.assert[prop] = assertions[prop];
             }
             /* Extend Assert with english chains */
-            QUnit.Assert.is = QUnit.Assert;
-            QUnit.Assert.does = QUnit.Assert;
-            QUnit.Assert.not = $.extend(true, {}, QUnit.Assert);
-            QUnit.Assert.not._flags.not = true;
+            QUnit.assert._flags.not = true;
+            QUnit.assert.is = QUnit.assert;
+            QUnit.assert.does = QUnit.assert;
+            QUnit.assert.not = $.extend(true, {}, QUnit.assert);
+            QUnit.assert.not._flags.not = true;
         }
     );
 
