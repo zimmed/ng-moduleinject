@@ -25,10 +25,11 @@
     });
     
     require(
-        ['jQuery','QUnit', 'tests/assertions'],
+        ['jQuery', 'QUnit', 'tests/assertions'],
         function ($, QUnit, assertions) {
+            var prop;
             /* Add custom assertion methods from tests/assertions.js */
-            for (var prop in assertions) {
+            for (prop in assertions) {
                 QUnit.Assert[prop] = assertions[prop];
             }
             /* Extend Assert with english chains */
