@@ -160,10 +160,27 @@
                     msg = this._parseMessage("{1} has been declared and defined.", msg, a);
                     var expr;
                     try {
-                        expr = (a !== undefined);
-                        expr = expr && (a !== null);
+                        expr = (typeof a !== 'undefined');
                     } catch (e) {
                         expr = false;
+                    }
+                    return this._test(expr, msg);
+                },
+                
+                /* Verifies that object exists, but is empty */
+                empty : function (a, msg) {
+                    var expr, prop;
+                    msg = this._parseMessage("{1} is empty.", msg, a);
+                    if (typeof a === "string" || typeof a === "array") {
+                        expr = (a.length === 0);
+                    } else if (typeof a === "object") {
+                        for (prop in a) {
+                            if (a.hasOwnProperty(prop)) {
+                                expr = false;
+                                break;
+                            }
+                    } else {
+                        expr = (a === null);
                     }
                     return this._test(expr, msg);
                 }
