@@ -7,8 +7,9 @@
         <li>Dependencies: angularjs; requirejs;</li>
     </ul>
 </h2>
-<div id="current">
-<p><em>Task Board</em></p>
+<hr>
+
+<p><strong>Task Board</strong></p>
 <p>
     First high-level implementation of AppController.
     <ul>
@@ -16,17 +17,18 @@
         <li>Validate correctness (AngularJS processes new module &amp; controllers correctly)</li>
     </ul>
 </p>
-</div>
-<div id="current">
-<p><em>0.0.1 - feature_first-hl-implementation</em></p>
+<br />
+
+<!-- current -->
+<p><strong>0.0.1 - feature_first-hl-implementation</strong></p>
 <p>AppController instantiation validated. No behavior yet.</p>
-</div>
-<div id="past">
-<p><em>0.0.0</em></p>
+<br />
+
+<!-- past -->
+<p><strong>0.0.0</strong></p>
 <p>No Implementation - Framework Extending</p>
 <p>Test framework running first alpha.</p>
 <p>No other information at this time.</p>
-</div>
 <hr>
 <p>
     Current project-distribution tree:
