@@ -120,6 +120,9 @@
                     msg = this._parseMessage("{1} is instance of {3}.",
                                              "{1} is not instance of {3}.",
                                              msg, testObject, classConstructor, classConstructor.name);
+                    if (typeof testObject === 'undefined' || testObject === null) {
+                        return this._test(false, msg);
+                    }
                     return this._test(testObject.constructor === classConstructor, msg);
                 },
                 
@@ -128,6 +131,9 @@
                     msg = this._parseMessage("{1} is instance of {2}.",
                                              "{1} is not instance of {2}.",
                                              msg, testObject, className);
+                    if (typeof testObject === 'undefined' || testObject === null) {
+                        return this._test(false, msg);
+                    }
                     return this._test(testObject.constructor.name === className, msg);
                 },
                 
