@@ -7,10 +7,27 @@
         <li>Dependencies: angularjs; requirejs;</li>
     </ul>
 </h2>
+<div id="current">
+<p><em>Future: 0.0.1</em></p>
+<p>
+    First high-level implementation of moduleinjector.
+    <ul>
+        <li>Validate instantiation</li>
+        <li>Validate basic behavior (DOM element exists when injected)</li>
+        <li>Validate correctness (AngularJS processes new module &amp; controllers correctly)</li>
+    </ul>
+</p>
+</div>
+<div id="current">
+<p><em>Current: 0.0.1</em></p>
+<p>Nothing implemented yet.</p>
+</div>
+<div id="past">
 <p><em>0.0.0</em></p>
-<p>Currently in beginning stages of development. Development will be test-driven.</p>
+<p>No Implementation - Framework Extending</p>
 <p>Test framework running first alpha.</p>
 <p>No other information at this time.</p>
+</div>
 <hr>
 <p>
     Current project-distribution tree:
