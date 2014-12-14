@@ -8,19 +8,18 @@
     </ul>
 </h2>
 <div id="current">
-<p><em>Future: 0.0.1</em></p>
+<p><em>Task Board</em></p>
 <p>
     First high-level implementation of AppController.
     <ul>
-        <li>Validate instantiation</li>
         <li>Validate basic behavior (DOM element exists when injected)</li>
         <li>Validate correctness (AngularJS processes new module &amp; controllers correctly)</li>
     </ul>
 </p>
 </div>
 <div id="current">
-<p><em>Current: 0.0.1</em></p>
-<p>Nothing implemented yet.</p>
+<p><em>0.0.1 - feature_first-hl-implementation</em></p>
+<p>AppController instantiation validated. No behavior yet.</p>
 </div>
 <div id="past">
 <p><em>0.0.0</em></p>
@@ -79,7 +78,7 @@
                             ng-appcontroller/
                             <ul>
                                 <li>main.js</li>
-                                <li>testAppController.js</li>
+                                <li>testAppControllerBare.js</li>
                             </ul>
                         </li>
                         <li>assertions.js</li>
