@@ -26,13 +26,45 @@
                          "testAppControllerCreate",
                          "Verify AppController object instantiation",
                          function (assert, _self) {
-                assert.ok(true, "No assertions written yet.");
+                var apps = null;
+                assert.does.not.throwAnyError(function () {
+                    apps = new AppController({
+                        "myModule" : {
+                            data : ["Spam", "And", "Eggs", "All", "Day"],
+                            route : "/",
+                            controllers : [
+                                '<div ng-controller="MyModuleCtrl" ng-model="data">' +
+                                '   <p ng-repeat="item in data">{{item}}</p>' +
+                                '</div>'
+                                ],
+                        }
+                    });
+                });
+                assert.does.exist(apps);
+                assert.is.not.empty(apps);
+                assert.is.typeOf(apps, 'object');
+                assert.is.instanceOf(apps, AppController);
+                
+                assert.expect(5);
             });
             _self.addTest(_self,
                          "testAppControllerValid",
                          "Verify AppController object instantiates with valid data",
                          function (assert, _self) {
-                assert.ok(true, "No assertions written yet.");
+                var apps = new AppController({
+                    "myModule" : {
+                        data : ["Spam", "And", "Eggs", "All", "Day"],
+                        route : "/",
+                        controllers : [
+                            '<div ng-controller="MyModuleCtrl" ng-model="data">' +
+                            '   <p ng-repeat="item in data">{{item}}</p>' +
+                            '</div>'
+                            ],
+                    }
+                });
+                assert.does.haveProperty(apps, "myModule");
+                
+                assert.expect(1);
             });
             _self.addTest(_self,
                          "testAppControllerInvalid",

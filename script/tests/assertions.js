@@ -182,6 +182,14 @@
                     return this._test(testObject.hasOwnProperty(propertyName), msg);
                 },
                 
+                /* Aliases */
+                haveItem : function (testObject, itemValue, msg) {
+                    return this.containItem(testObject, itemValue, msg);
+                },
+                haveProperty : function (testObject, propertyName, msg) {
+                    return this.containProperty(testObject, propertyName, msg);
+                },
+                
                 /* Verifies that operation throws an error */
                 throwError : function (operation, error, msg) {
                     msg = this._parseMessage("Operation throws error ({v2}) when called.",
@@ -193,6 +201,7 @@
                     try {
                         operation();
                     } catch (e) {
+                        msg += ' (thrown: ' + e + ')';
                         if (!error || e === error) {
                             return this._test(true, msg);
                         }
@@ -211,6 +220,7 @@
                     try {
                         operation();
                     } catch (e) {
+                        msg += ' (thrown: ' + e + ')';
                         return this._test(true, msg);
                     }
                     return this._test(false, msg);
@@ -239,6 +249,7 @@
                     if (typeof testObject === "string" || Array.isArray(testObject)) {
                         expr = (testObject.length === 0);
                     } else if (typeof testObject === "object") {
+                        expr = true;
                         for (prop in testObject) {
                             if (testObject.hasOwnProperty(prop)) {
                                 expr = false;
