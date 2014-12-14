@@ -9,7 +9,7 @@
 </h2>
 <p><em>0.0.0</em></p>
 <p>Currently in beginning stages of development. Development will be test-driven.</p>
-<p>Test framework up and running.</p>
+<p>Test framework running first alpha.</p>
 <p>No other information at this time.</p>
 <hr>
 <p>
@@ -54,6 +54,7 @@
                             dummy/
                             <ul>
                                 <li>dummyOne.js</li>
+                                <li>dummyTwo.js</li>
                                 <li>main.js</li>
                             </ul>
                         </li>
@@ -63,6 +64,7 @@
                                 <li>main.js</li>
                             </ul>
                         </li>
+                        <li>assertions.js</li>
                         <li>main.js</li>
                         <li>testmodule.js</li>
                         <li>testsuite.js</li>
