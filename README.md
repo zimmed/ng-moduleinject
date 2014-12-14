@@ -1,5 +1,5 @@
-<h1>ng-moduleinject</h1>
-<h2>Plugin for angular to handle simple module injection at runtime.</h2>
+<h1>ng-appcontroller</h1>
+<h2>Plugin for angular to handle data-bound module instances and runtime injection.</h2>
 <h4>
     <ul style="list-style-type: none">
         <li>Author: Dave Zimmelman</li>
@@ -10,7 +10,7 @@
 <div id="current">
 <p><em>Future: 0.0.1</em></p>
 <p>
-    First high-level implementation of moduleinjector.
+    First high-level implementation of AppController.
     <ul>
         <li>Validate instantiation</li>
         <li>Validate basic behavior (DOM element exists when injected)</li>
@@ -35,7 +35,7 @@
         <li>
             script/
             <ul>
-                <li>ng-moduleinject.js</li>
+                <li>ng-appcontroller.js</li>
                 <!--li>
                     ng-moduleinject/
                     <ul>
@@ -60,7 +60,7 @@
                     </ul>
                 </li>
                 <!--li>
-                    ng-moduleinject/
+                    ng-appcontroller/
                     <ul>
                     </ul>
                 </li-->
@@ -76,9 +76,10 @@
                             </ul>
                         </li>
                         <li>
-                            ng-moduleinject/
+                            ng-appcontroller/
                             <ul>
                                 <li>main.js</li>
+                                <li>testAppController.js</li>
                             </ul>
                         </li>
                         <li>assertions.js</li>
@@ -87,7 +88,7 @@
                         <li>testsuite.js</li>
                     </ul>
                 </li>
-                <li>ng-moduleinject.js</li>
+                <li>ng-appcontroller.js</li>
                 <li>testmain.js</li>
             </ul>
         </li>

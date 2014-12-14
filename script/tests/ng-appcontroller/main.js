@@ -6,13 +6,15 @@
     "use strict";
 
     define(
-        ['../testsuite'],
-        function (TestSuite) {
+        ['tests/testsuite',
+         'tests/ng-appcontroller/testAppControllerBare'],
+        function (TestSuite, testAppControllerBare) {
             
             // Create new TestSuite
             var testSuite = new TestSuite();
             
             // Expose child TestSuites or Tests
+            testSuite.addChild('testAppControllerBare', testAppControllerBare);
             
             // Return TestSuite
             return testSuite;
