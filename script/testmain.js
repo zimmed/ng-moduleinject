@@ -33,12 +33,11 @@
                 QUnit.assert[prop] = assertions[prop];
             }
             /* Extend Assert with english chains */
-            QUnit.assert._flags.not = true;
             QUnit.assert.is = QUnit.assert;
             QUnit.assert.does = QUnit.assert;
             temp = $.extend(false, {}, QUnit.assert);
+            temp._not = true;
             QUnit.assert.not = temp;
-            QUnit.assert.not._flags.not = true;
         }
     );
 
